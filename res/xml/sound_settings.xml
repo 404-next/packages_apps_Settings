@@ -192,6 +192,14 @@
         settings:keywords="@string/keywords_vibrate_on_touch"
         android:order="-25"/>
 
+    <!-- Successful authentication -->
+    <SwitchPreference
+        android:key="sucess_vib"
+        android:title="@string/sucess_vib_title"
+        android:summary="@string/sucess_vib_summary"
+        android:order="24"
+        settings:controller="com.android.settings.notification.AuthenticationVibrationPreferenceController"/>
+
     <!-- Dock speaker plays -->
     <DropDownPreference
         android:key="dock_audio_media"
