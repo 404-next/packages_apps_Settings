@@ -15,18 +15,15 @@
  */
 package com.android.settings.deviceinfo.firmwareversion
 
-import android.R
 import android.content.Context
 import android.os.SystemProperties
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController
 
-class p404VersionPreferenceController(private val mContext: Context, key: String?) :
+public class p404VersionPreferenceController(private val mContext: Context, key: String?) :
     BasePreferenceController(mContext, key) {
-    val availabilityStatus: Int
-        get() = AVAILABLE_UNSEARCHABLE
-    val summary: CharSequence
-        get() = SystemProperties.get(
+        override public fun getAvailabilityStatus() = AVAILABLE_UNSEARCHABLE
+        override public fun getSummary() = SystemProperties.get(
             PROPERTY_P404_PROP,
             mContext.getString(R.string.unknown)
         )
