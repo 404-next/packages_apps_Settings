@@ -20,23 +20,29 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="top_level_settings">
 
-    <Preference
-        android:fragment="com.android.settings.network.NetworkDashboardFragment"
-        android:icon="@drawable/ic_settings_wireless"
-        android:key="top_level_network"
-        android:order="-150"
-        android:title="@string/network_dashboard_title"
-        android:summary="@string/summary_placeholder"
-        settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/>
 
-    <Preference
-        android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
-        android:icon="@drawable/ic_devices_other"
-        android:key="top_level_connected_devices"
-        android:order="-140"
-        android:title="@string/connected_devices_dashboard_title"
-        android:summary="@string/connected_devices_dashboard_default_summary"
-        settings:controller="com.android.settings.connecteddevice.TopLevelConnectedDevicesPreferenceController"/>
+        <Preference
+                android:fragment="com.android.settings.network.NetworkDashboardFragment"
+                android:icon="@drawable/ic_settings_wireless"
+                android:key="top_level_network"
+                android:order="-150"
+                android:layout="@layout/card_home"
+                android:title="@string/network_dashboard_title"
+                android:summary="@string/summary_placeholder"
+                settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/>
+
+        <Preference
+                android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
+                android:icon="@drawable/ic_devices_other"
+                android:key="top_level_connected_devices"
+                android:order="-140"
+                android:title="@string/connected_devices_dashboard_title"
+                android:summary="@string/connected_devices_dashboard_default_summary"
+                settings:controller="com.android.settings.connecteddevice.TopLevelConnectedDevicesPreferenceController"/>
+
+
+    <com.android.settings.homepage.TopLevelDivider
+        android:order="-139"/>
 
     <Preference
         android:fragment="com.android.settings.applications.AppDashboardFragment"
@@ -71,6 +77,10 @@
         android:title="@string/storage_settings"
         android:summary="@string/summary_placeholder"
         settings:controller="com.android.settings.deviceinfo.TopLevelStoragePreferenceController"/>
+
+
+    <com.android.settings.homepage.TopLevelDivider
+        android:order="-98"/>
 
     <Preference
         android:fragment="com.android.settings.notification.SoundSettings"
